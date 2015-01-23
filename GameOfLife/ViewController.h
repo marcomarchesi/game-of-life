@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "game.h"
+@class GameView;
+@interface ViewController : UIViewController<UIGestureRecognizerDelegate>{
+    
+    int game_array[game::WORLD_SIZE][game::WORLD_SIZE];
+    int next_array[game::WORLD_SIZE][game::WORLD_SIZE];
+    int time;
+}
 
-@interface ViewController : UIViewController
-
-
+@property IBOutlet GameView *gameView;
 @end
 

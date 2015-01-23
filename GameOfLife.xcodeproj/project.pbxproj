@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		42118D761A72B11B008DA23C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42118D751A72B11B008DA23C /* main.m */; };
 		42118D791A72B11B008DA23C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42118D781A72B11B008DA23C /* AppDelegate.m */; };
-		42118D7C1A72B11B008DA23C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42118D7B1A72B11B008DA23C /* ViewController.m */; };
+		42118D7C1A72B11B008DA23C /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118D7B1A72B11B008DA23C /* ViewController.mm */; };
 		42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42118D7D1A72B11B008DA23C /* Main.storyboard */; };
 		42118D811A72B11B008DA23C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42118D801A72B11B008DA23C /* Images.xcassets */; };
 		42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42118D821A72B11B008DA23C /* LaunchScreen.xib */; };
 		42118D901A72B11B008DA23C /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */; };
+		42118D9B1A72B149008DA23C /* game.cc in Sources */ = {isa = PBXBuildFile; fileRef = 42118D991A72B149008DA23C /* game.cc */; };
+		42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42118DA11A72B268008DA23C /* QuartzCore.framework */; };
+		42118DA51A72B2CB008DA23C /* GameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118DA41A72B2CB008DA23C /* GameView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +36,18 @@
 		42118D771A72B11B008DA23C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42118D781A72B11B008DA23C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		42118D7A1A72B11B008DA23C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42118D7B1A72B11B008DA23C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42118D7B1A72B11B008DA23C /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		42118D7E1A72B11B008DA23C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42118D801A72B11B008DA23C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42118D831A72B11B008DA23C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42118D891A72B11B008DA23C /* GameOfLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42118D8E1A72B11B008DA23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeTests.m; sourceTree = "<group>"; };
+		42118D991A72B149008DA23C /* game.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cc; sourceTree = "<group>"; };
+		42118D9A1A72B149008DA23C /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		42118DA11A72B268008DA23C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		42118DA31A72B2CB008DA23C /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		42118DA41A72B2CB008DA23C /* GameView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,9 @@
 		42118D671A72B11B008DA23C = {
 			isa = PBXGroup;
 			children = (
+				42118DA11A72B268008DA23C /* QuartzCore.framework */,
+				42118DA01A72B256008DA23C /* frameworks */,
+				42118D9C1A72B14E008DA23C /* src */,
 				42118D721A72B11B008DA23C /* GameOfLife */,
 				42118D8C1A72B11B008DA23C /* GameOfLifeTests */,
 				42118D711A72B11B008DA23C /* Products */,
@@ -84,11 +96,13 @@
 				42118D771A72B11B008DA23C /* AppDelegate.h */,
 				42118D781A72B11B008DA23C /* AppDelegate.m */,
 				42118D7A1A72B11B008DA23C /* ViewController.h */,
-				42118D7B1A72B11B008DA23C /* ViewController.m */,
+				42118D7B1A72B11B008DA23C /* ViewController.mm */,
 				42118D7D1A72B11B008DA23C /* Main.storyboard */,
 				42118D801A72B11B008DA23C /* Images.xcassets */,
 				42118D821A72B11B008DA23C /* LaunchScreen.xib */,
 				42118D731A72B11B008DA23C /* Supporting Files */,
+				42118DA31A72B2CB008DA23C /* GameView.h */,
+				42118DA41A72B2CB008DA23C /* GameView.mm */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
@@ -117,6 +131,22 @@
 				42118D8E1A72B11B008DA23C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42118D9C1A72B14E008DA23C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				42118D991A72B149008DA23C /* game.cc */,
+				42118D9A1A72B149008DA23C /* game.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		42118DA01A72B256008DA23C /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42118D7C1A72B11B008DA23C /* ViewController.m in Sources */,
+				42118D7C1A72B11B008DA23C /* ViewController.mm in Sources */,
+				42118DA51A72B2CB008DA23C /* GameView.mm in Sources */,
+				42118D9B1A72B149008DA23C /* game.cc in Sources */,
 				42118D791A72B11B008DA23C /* AppDelegate.m in Sources */,
 				42118D761A72B11B008DA23C /* main.m in Sources */,
 			);
@@ -346,6 +378,7 @@
 				INFOPLIST_FILE = GameOfLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -356,6 +389,7 @@
 				INFOPLIST_FILE = GameOfLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
