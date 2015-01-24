@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 namespace game{
-    static const int WORLD_SIZE = 40;
+    static const int WORLD_SIZE = 40;   //number of cells in a row
     static const int DEAD = 0;
     static const int ALIVE = 1;
     void init(int array[][WORLD_SIZE]);

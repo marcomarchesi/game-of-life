@@ -10,18 +10,21 @@
 #include <iostream>
 namespace game{
     
+    // init all the cells to DEAD value
     void init(int array[][WORLD_SIZE]){
         for(int i = 0;i<WORLD_SIZE;++i){
             for(int j=0;j<WORLD_SIZE;++j){
                 array[i][j] = DEAD;
             }
         }
+// uncomment for default cells
 //        array[2][3] = ALIVE;
 //        array[1][4] = ALIVE;
 //        array[3][3] = ALIVE;
 //        array[3][2] = ALIVE;
     }
-        
+    
+    //check cell's neighbors
     int explore(int array[][WORLD_SIZE],int x, int y){
         
         int live_counter = 0;
@@ -56,7 +59,7 @@ namespace game{
                 live_counter++;
         }
         
-        
+        //Conways'Game of Life rules
         if(array[x][y] == ALIVE){   //cell is alive
             if(live_counter>1 && live_counter<4)
                 return ALIVE;
