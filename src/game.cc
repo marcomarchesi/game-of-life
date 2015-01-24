@@ -63,12 +63,12 @@ namespace game{
             else
                 return DEAD;
         }else{  //cell is dead
-            if(live_counter>2)
+            if(live_counter==3)
                 return ALIVE;
             else
                 return DEAD;
         }
-        return 0;
+        return DEAD;
     }
     
 }

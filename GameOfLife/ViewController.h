@@ -16,6 +16,7 @@
     int time;
     int game_state;
     NSTimer *game_timer;
+    UITapGestureRecognizer *tapRecognizer;
 }
 
 @property IBOutlet GameView *gameView;

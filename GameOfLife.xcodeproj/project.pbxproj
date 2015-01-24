@@ -17,6 +17,7 @@
 		42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42118DA11A72B268008DA23C /* QuartzCore.framework */; };
 		42118DA51A72B2CB008DA23C /* GameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118DA41A72B2CB008DA23C /* GameView.mm */; };
 		42C97D221A73AD7600B3C9D7 /* game.cc in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D211A73AD7600B3C9D7 /* game.cc */; };
+		42C97D261A73BE1400B3C9D7 /* BGView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D251A73BE1400B3C9D7 /* BGView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		42118DA41A72B2CB008DA23C /* GameView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameView.mm; sourceTree = "<group>"; };
 		42C97D211A73AD7600B3C9D7 /* game.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = game.cc; path = src/game.cc; sourceTree = "<group>"; };
 		42C97D231A73AD8300B3C9D7 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = game.h; path = src/game.h; sourceTree = "<group>"; };
+		42C97D241A73BE1400B3C9D7 /* BGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGView.h; sourceTree = "<group>"; };
+		42C97D251A73BE1400B3C9D7 /* BGView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BGView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				42118D731A72B11B008DA23C /* Supporting Files */,
 				42118DA31A72B2CB008DA23C /* GameView.h */,
 				42118DA41A72B2CB008DA23C /* GameView.mm */,
+				42C97D241A73BE1400B3C9D7 /* BGView.h */,
+				42C97D251A73BE1400B3C9D7 /* BGView.mm */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				42C97D221A73AD7600B3C9D7 /* game.cc in Sources */,
 				42118D791A72B11B008DA23C /* AppDelegate.m in Sources */,
 				42118D761A72B11B008DA23C /* main.m in Sources */,
+				42C97D261A73BE1400B3C9D7 /* BGView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GameOfLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GameOfLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
