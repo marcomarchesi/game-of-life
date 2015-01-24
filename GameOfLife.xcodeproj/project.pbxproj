@@ -14,9 +14,9 @@
 		42118D811A72B11B008DA23C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42118D801A72B11B008DA23C /* Images.xcassets */; };
 		42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42118D821A72B11B008DA23C /* LaunchScreen.xib */; };
 		42118D901A72B11B008DA23C /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */; };
-		42118D9B1A72B149008DA23C /* game.cc in Sources */ = {isa = PBXBuildFile; fileRef = 42118D991A72B149008DA23C /* game.cc */; };
 		42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42118DA11A72B268008DA23C /* QuartzCore.framework */; };
 		42118DA51A72B2CB008DA23C /* GameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118DA41A72B2CB008DA23C /* GameView.mm */; };
+		42C97D221A73AD7600B3C9D7 /* game.cc in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D211A73AD7600B3C9D7 /* game.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,11 +43,11 @@
 		42118D891A72B11B008DA23C /* GameOfLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42118D8E1A72B11B008DA23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeTests.m; sourceTree = "<group>"; };
-		42118D991A72B149008DA23C /* game.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cc; sourceTree = "<group>"; };
-		42118D9A1A72B149008DA23C /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		42118DA11A72B268008DA23C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		42118DA31A72B2CB008DA23C /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		42118DA41A72B2CB008DA23C /* GameView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameView.mm; sourceTree = "<group>"; };
+		42C97D211A73AD7600B3C9D7 /* game.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = game.cc; path = src/game.cc; sourceTree = "<group>"; };
+		42C97D231A73AD8300B3C9D7 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = game.h; path = src/game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,6 @@
 		42118D671A72B11B008DA23C = {
 			isa = PBXGroup;
 			children = (
-				42118DA11A72B268008DA23C /* QuartzCore.framework */,
 				42118DA01A72B256008DA23C /* frameworks */,
 				42118D9C1A72B14E008DA23C /* src */,
 				42118D721A72B11B008DA23C /* GameOfLife */,
@@ -136,8 +135,8 @@
 		42118D9C1A72B14E008DA23C /* src */ = {
 			isa = PBXGroup;
 			children = (
-				42118D991A72B149008DA23C /* game.cc */,
-				42118D9A1A72B149008DA23C /* game.h */,
+				42C97D211A73AD7600B3C9D7 /* game.cc */,
+				42C97D231A73AD8300B3C9D7 /* game.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 		42118DA01A72B256008DA23C /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42118DA11A72B268008DA23C /* QuartzCore.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			files = (
 				42118D7C1A72B11B008DA23C /* ViewController.mm in Sources */,
 				42118DA51A72B2CB008DA23C /* GameView.mm in Sources */,
-				42118D9B1A72B149008DA23C /* game.cc in Sources */,
+				42C97D221A73AD7600B3C9D7 /* game.cc in Sources */,
 				42118D791A72B11B008DA23C /* AppDelegate.m in Sources */,
 				42118D761A72B11B008DA23C /* main.m in Sources */,
 			);
@@ -446,6 +446,7 @@
 				42118D951A72B11B008DA23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42118D961A72B11B008DA23C /* Build configuration list for PBXNativeTarget "GameOfLifeTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +455,7 @@
 				42118D981A72B11B008DA23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

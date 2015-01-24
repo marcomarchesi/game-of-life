@@ -14,8 +14,12 @@
     int game_array[game::WORLD_SIZE][game::WORLD_SIZE];
     int next_array[game::WORLD_SIZE][game::WORLD_SIZE];
     int time;
+    int game_state;
+    NSTimer *game_timer;
 }
 
 @property IBOutlet GameView *gameView;
+@property IBOutlet UIButton *startButton;
+-(IBAction)start:(id)sender;
 @end
 

@@ -16,10 +16,10 @@ namespace game{
                 array[i][j] = DEAD;
             }
         }
-        array[2][3] = ALIVE;
-        array[1][4] = ALIVE;
-        array[3][3] = ALIVE;
-        array[3][2] = ALIVE;
+//        array[2][3] = ALIVE;
+//        array[1][4] = ALIVE;
+//        array[3][3] = ALIVE;
+//        array[3][2] = ALIVE;
     }
         
     int explore(int array[][WORLD_SIZE],int x, int y){
@@ -33,17 +33,23 @@ namespace game{
             live_counter++;
         if(array[x-1][y] == ALIVE)
             live_counter++;
-        if(array[x-1][y+1] == ALIVE)
-            live_counter++;
+        
+        if(b<WORLD_SIZE)
+            if(array[x-1][y+1] == ALIVE)
+                live_counter++;
         if(array[x][y-1] == ALIVE)
             live_counter++;
-        if(array[x+1][y-1] == ALIVE)
-            live_counter++;
-
-        if(array[x+1][y] == ALIVE)
-            live_counter++;
-        if(array[x][y+1] == ALIVE)
-            live_counter++;
+        
+        if(a<WORLD_SIZE)
+            if(array[x+1][y-1] == ALIVE)
+                live_counter++;
+        if(a<WORLD_SIZE)
+            if(array[x+1][y] == ALIVE)
+                live_counter++;
+        
+        if(b<WORLD_SIZE)
+            if(array[x][y+1] == ALIVE)
+                live_counter++;
         
         if(a<WORLD_SIZE && b<WORLD_SIZE){
             if(array[x+1][y+1] == ALIVE)
