@@ -9,15 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface GameOfLifeTests : XCTestCase
+#import "game.h"
 
+@interface GameOfLifeTests : XCTestCase{
+    int game_array[game::WORLD_SIZE][game::WORLD_SIZE];
+    int next_array[game::WORLD_SIZE][game::WORLD_SIZE];
+}
 @end
 
 @implementation GameOfLifeTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // initialize the cells array
+    game::init(game_array);
 }
 
 - (void)tearDown {
@@ -25,9 +31,10 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testExplore {
+    //Check if the cell (5,0) is DEAD (0)
+    int value = game::explore(game_array,5,0);
+    XCTAssertEqual(value,0,@"Pass");
 }
 
 - (void)testPerformanceExample {

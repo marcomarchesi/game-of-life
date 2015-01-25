@@ -18,10 +18,10 @@ namespace game{
             }
         }
 // uncomment for default cells
-//        array[2][3] = ALIVE;
-//        array[1][4] = ALIVE;
-//        array[3][3] = ALIVE;
-//        array[3][2] = ALIVE;
+        array[3][39] = ALIVE;
+        array[4][39] = ALIVE;
+        array[5][39] = ALIVE;
+        array[4][38] = ALIVE;
     }
     
     //check cell's neighbors
@@ -29,35 +29,39 @@ namespace game{
         
         int live_counter = 0;
         
-        int a = x+1;
-        int b = y+1;
+        if(x>0 && y>0)
+            if(array[x-1][y-1] == ALIVE){
+                live_counter++;
+            }
+        if(x>0)
+            if(array[x-1][y] == ALIVE){
+                live_counter++;
+            }
+        if(x>0 && y<WORLD_SIZE-1)
+            if(array[x-1][y+1] == ALIVE){
+                live_counter++;
+            }
+        if(y>0)
+            if(array[x][y-1] == ALIVE){
+                live_counter++;
+            }
+        if(y>0 && x<WORLD_SIZE-1)
+            if(array[x+1][y-1] == ALIVE){
+                live_counter++;
+            }
+        if(x<WORLD_SIZE-1)
+            if(array[x+1][y] == ALIVE){
+                live_counter++;
+            }
+        if(y<WORLD_SIZE-1)
+            if(array[x][y+1] == ALIVE){
+                live_counter++;
+            }
+        if(x<WORLD_SIZE-1 && y<WORLD_SIZE-1)
+            if(array[x+1][y+1] == ALIVE){
+                live_counter++;
+            }
 
-        if(array[x-1][y-1] == ALIVE)
-            live_counter++;
-        if(array[x-1][y] == ALIVE)
-            live_counter++;
-        
-        if(b<WORLD_SIZE)
-            if(array[x-1][y+1] == ALIVE)
-                live_counter++;
-        if(array[x][y-1] == ALIVE)
-            live_counter++;
-        
-        if(a<WORLD_SIZE)
-            if(array[x+1][y-1] == ALIVE)
-                live_counter++;
-        if(a<WORLD_SIZE)
-            if(array[x+1][y] == ALIVE)
-                live_counter++;
-        
-        if(b<WORLD_SIZE)
-            if(array[x][y+1] == ALIVE)
-                live_counter++;
-        
-        if(a<WORLD_SIZE && b<WORLD_SIZE){
-            if(array[x+1][y+1] == ALIVE)
-                live_counter++;
-        }
         
         //Conways'Game of Life rules
         if(array[x][y] == ALIVE){   //cell is alive

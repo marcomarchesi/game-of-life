@@ -9,8 +9,12 @@
 #import "ViewController.h"
 #import "GameView.h"
 #import "BGView.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController ()
+@interface ViewController ()<AVAudioPlayerDelegate>
+
+@property (strong, nonatomic) AVAudioPlayer *cellSoundPlayer;
+@property (strong, nonatomic) AVAudioPlayer *resetSoundPlayer;
 
 @end
 
@@ -19,8 +23,13 @@
 @synthesize startButton = _startButton;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    //configure sounds
+    [self configureSound];
 
     
+    //begin with values
     time = 0;
     game_state = 0; //game stop
     gameView.cell_size = gameView.frame.size.width/ game::WORLD_SIZE;
@@ -55,6 +64,23 @@
     }
     
 }
+
+-(void)configureSound{
+    // Create audio player for cell sound
+    NSString *cellSoundPath = [[NSBundle mainBundle] pathForResource:@"cell" ofType:@"caf"];
+    NSURL *cellSoundURL = [NSURL fileURLWithPath:cellSoundPath];
+    self.cellSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:cellSoundURL error:nil];
+    self.cellSoundPlayer.delegate = self;
+    self.cellSoundPlayer.numberOfLoops = 0;	//no loops
+    // Create audio player for cell sound
+    NSString *resetSoundPath = [[NSBundle mainBundle] pathForResource:@"reset" ofType:@"caf"];
+    NSURL *resetSoundURL = [NSURL fileURLWithPath:resetSoundPath];
+    self.resetSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:resetSoundURL error:nil];
+    self.resetSoundPlayer.delegate = self;
+    self.resetSoundPlayer.numberOfLoops = 0;	//no loops
+}
+
+
 /* START 
  button enabled
  */
@@ -90,27 +116,58 @@
             [gameView update:i with:j andValue:game_array[i][j]];
         }
     }
+    [self playResetSound];
     [self.view setNeedsDisplay];
 }
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:gameView];
     
     int i_value = (touchLocation.x / gameView.cell_size);
     int j_value = (touchLocation.y / gameView.cell_size);
-
+    
     if(j_value >-1 && j_value<game::WORLD_SIZE){    //otherwise it's out of range
-            game_array[i_value][j_value] = !game_array[i_value][j_value];
-            [gameView update:i_value with:j_value andValue:game_array[i_value][j_value]];
+        
+        if(game_array[i_value][j_value] == game::DEAD){
+            game_array[i_value][j_value] = game::ALIVE;
+            [self playCellSound];
+        }else{
+            game_array[i_value][j_value] = game::DEAD;
+        }
+        
+        [gameView update:i_value with:j_value andValue:game_array[i_value][j_value]];
         [self.view setNeedsDisplay];
     }
     if(game_state == 1){    //stop the game if you add cells
         game_state = 0;
         [game_timer invalidate];
     }
-    
+
 }
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:gameView];
+    
+    int i_value = (touchLocation.x / gameView.cell_size);
+    int j_value = (touchLocation.y / gameView.cell_size);
+    
+    if(j_value >-1 && j_value<game::WORLD_SIZE){    //otherwise it's out of range
+        
+        if(game_array[i_value][j_value] == game::DEAD){
+            game_array[i_value][j_value] = game::ALIVE;
+            [self playCellSound];
+        }
+
+        [gameView update:i_value with:j_value andValue:game_array[i_value][j_value]];
+        [self.view setNeedsDisplay];
+    }
+    if(game_state == 1){    //stop the game if you add cells
+        game_state = 0;
+        [game_timer invalidate];
+    }
+
+}
+
 /* RUN
  game progress using game::explore C++ method
  */
@@ -121,16 +178,25 @@
                 next_array[i][j] = game::explore(game_array,i,j);
             }
         }
-        
         for(int i = 0;i<game::WORLD_SIZE;++i){
             for(int j=0;j<game::WORLD_SIZE;++j){
                 game_array[i][j] = next_array[i][j];
                 [gameView update:i with:j andValue:game_array[i][j]];
             }
         }
-    
         time++;    
 };
+
+
+
+-(void)playCellSound{
+//    [self.cellSoundPlayer stop];
+    [self.cellSoundPlayer play];
+}
+-(void)playResetSound{
+    [self.resetSoundPlayer play];
+}
+
 
 
 - (void)didReceiveMemoryWarning {

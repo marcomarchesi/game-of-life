@@ -16,7 +16,7 @@
     
     for(int i = 0;i<game::WORLD_SIZE;++i){
         for(int j=0;j<game::WORLD_SIZE;++j){
-            CGContextSetRGBFillColor (myContext, 0.05,0.05,0.05,1);
+            CGContextSetRGBFillColor (myContext, 0.08,0.08,0.08,1);
             CGContextFillRect (myContext, CGRectMake (i*_cell_size, j*_cell_size, _cell_size-1, _cell_size-1));
         }
     };

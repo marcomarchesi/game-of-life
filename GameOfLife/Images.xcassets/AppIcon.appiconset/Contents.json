@@ -51,25 +51,20 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "app-icon76.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "app-icon152.png",
       "scale" : "2x"
     },
     {
       "idiom" : "car",
       "size" : "120x120",
-      "scale" : "1x"
-    },
-    {
-      "size" : "72x72",
-      "idiom" : "ipad",
-      "filename" : "app-icon72.png",
-      "unassigned" : true,
       "scale" : "1x"
     }
   ],

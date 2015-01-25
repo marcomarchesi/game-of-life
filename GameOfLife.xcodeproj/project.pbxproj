@@ -13,11 +13,14 @@
 		42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42118D7D1A72B11B008DA23C /* Main.storyboard */; };
 		42118D811A72B11B008DA23C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42118D801A72B11B008DA23C /* Images.xcassets */; };
 		42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42118D821A72B11B008DA23C /* LaunchScreen.xib */; };
-		42118D901A72B11B008DA23C /* GameOfLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */; };
+		42118D901A72B11B008DA23C /* GameOfLifeTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118D8F1A72B11B008DA23C /* GameOfLifeTests.mm */; };
 		42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42118DA11A72B268008DA23C /* QuartzCore.framework */; };
 		42118DA51A72B2CB008DA23C /* GameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118DA41A72B2CB008DA23C /* GameView.mm */; };
 		42C97D221A73AD7600B3C9D7 /* game.cc in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D211A73AD7600B3C9D7 /* game.cc */; };
 		42C97D261A73BE1400B3C9D7 /* BGView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D251A73BE1400B3C9D7 /* BGView.mm */; };
+		42C97D331A75432300B3C9D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C97D321A75432300B3C9D7 /* AVFoundation.framework */; };
+		42C97D371A75467400B3C9D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C97D361A75467400B3C9D7 /* AudioToolbox.framework */; };
+		42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D3E1A755A1800B3C9D7 /* reset.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,7 @@
 		42118D831A72B11B008DA23C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42118D891A72B11B008DA23C /* GameOfLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42118D8E1A72B11B008DA23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOfLifeTests.m; sourceTree = "<group>"; };
+		42118D8F1A72B11B008DA23C /* GameOfLifeTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOfLifeTests.mm; sourceTree = "<group>"; };
 		42118DA11A72B268008DA23C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		42118DA31A72B2CB008DA23C /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		42118DA41A72B2CB008DA23C /* GameView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameView.mm; sourceTree = "<group>"; };
@@ -51,6 +54,10 @@
 		42C97D231A73AD8300B3C9D7 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = game.h; path = src/game.h; sourceTree = "<group>"; };
 		42C97D241A73BE1400B3C9D7 /* BGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGView.h; sourceTree = "<group>"; };
 		42C97D251A73BE1400B3C9D7 /* BGView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BGView.mm; sourceTree = "<group>"; };
+		42C97D321A75432300B3C9D7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		42C97D361A75467400B3C9D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		42C97D3D1A75532200B3C9D7 /* cell.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cell.caf; sourceTree = "<group>"; };
+		42C97D3E1A755A1800B3C9D7 /* reset.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reset.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C97D371A75467400B3C9D7 /* AudioToolbox.framework in Frameworks */,
+				42C97D331A75432300B3C9D7 /* AVFoundation.framework in Frameworks */,
 				42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +104,7 @@
 		42118D721A72B11B008DA23C /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				42C97D391A7546AA00B3C9D7 /* sounds */,
 				42118D771A72B11B008DA23C /* AppDelegate.h */,
 				42118D781A72B11B008DA23C /* AppDelegate.m */,
 				42118D7A1A72B11B008DA23C /* ViewController.h */,
@@ -123,7 +133,7 @@
 		42118D8C1A72B11B008DA23C /* GameOfLifeTests */ = {
 			isa = PBXGroup;
 			children = (
-				42118D8F1A72B11B008DA23C /* GameOfLifeTests.m */,
+				42118D8F1A72B11B008DA23C /* GameOfLifeTests.mm */,
 				42118D8D1A72B11B008DA23C /* Supporting Files */,
 			);
 			path = GameOfLifeTests;
@@ -149,9 +159,20 @@
 		42118DA01A72B256008DA23C /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42C97D361A75467400B3C9D7 /* AudioToolbox.framework */,
+				42C97D321A75432300B3C9D7 /* AVFoundation.framework */,
 				42118DA11A72B268008DA23C /* QuartzCore.framework */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		42C97D391A7546AA00B3C9D7 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				42C97D3E1A755A1800B3C9D7 /* reset.caf */,
+				42C97D3D1A75532200B3C9D7 /* cell.caf */,
+			);
+			name = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */,
 				42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */,
 				42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */,
 				42118D811A72B11B008DA23C /* Images.xcassets in Resources */,
@@ -267,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42118D901A72B11B008DA23C /* GameOfLifeTests.m in Sources */,
+				42118D901A72B11B008DA23C /* GameOfLifeTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

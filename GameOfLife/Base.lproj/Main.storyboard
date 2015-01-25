@@ -21,7 +21,7 @@
                                 <rect key="frame" x="64" y="883" width="640" height="64"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTv-AQ-4LV">
-                                <rect key="frame" x="352" y="883" width="64" height="64"/>
+                                <rect key="frame" x="345" y="883" width="64" height="64"/>
                                 <state key="normal" image="start-button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
