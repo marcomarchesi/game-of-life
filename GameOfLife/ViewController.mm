@@ -67,6 +67,16 @@
 }
 
 -(void)configureMusicAndSound{
+    
+    // Create audio player for background
+    NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"gameoflife" ofType:@"caf"];
+    NSURL *backgroundMusicURL = [NSURL fileURLWithPath:backgroundMusicPath];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:nil];
+    self.backgroundMusicPlayer.delegate = self;
+    self.backgroundMusicPlayer.volume = 0.3;
+    self.backgroundMusicPlayer.numberOfLoops = -1;	//no loops
+    [self.backgroundMusicPlayer play];
+    
     // Create audio player for cell sound
     NSString *cellSoundPath = [[NSBundle mainBundle] pathForResource:@"cell" ofType:@"caf"];
     NSURL *cellSoundURL = [NSURL fileURLWithPath:cellSoundPath];

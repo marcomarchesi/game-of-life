@@ -1,4 +1,4 @@
-# game-of-life
+# Game Of Life
 
 A Roger Conway's Game of Life for iOS v1.
 
