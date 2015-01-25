@@ -17,12 +17,22 @@ namespace game{
                 array[i][j] = DEAD;
             }
         }
-// uncomment for default cells
-        array[30][30] = ALIVE;
-        array[31][30] = ALIVE;
-        array[29][31] = ALIVE;
-        array[30][31] = ALIVE;
-        array[31][32] = ALIVE;
+    }
+    
+    void initWithPattern(int array[][WORLD_SIZE],int pattern){
+        
+        for(int i = 0;i<WORLD_SIZE;++i){
+            for(int j=0;j<WORLD_SIZE;++j){
+                array[i][j] = DEAD;
+            }
+        }
+        if(pattern == 1){
+            array[30][30] = ALIVE;
+            array[31][30] = ALIVE;
+            array[29][31] = ALIVE;
+            array[30][31] = ALIVE;
+            array[31][32] = ALIVE;
+        }
     }
     
     //check cell's neighbors

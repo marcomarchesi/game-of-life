@@ -16,6 +16,7 @@ namespace game{
     static const int DEAD = 0;
     static const int ALIVE = 1;
     void init(int array[][WORLD_SIZE]);
+    void initWithPattern(int array[][WORLD_SIZE],int pattern);
     int explore(int array[][WORLD_SIZE],int x, int y);
 }
 

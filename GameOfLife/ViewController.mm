@@ -22,13 +22,15 @@
 @implementation ViewController
 @synthesize gameView;
 @synthesize startButton = _startButton;
+@synthesize infoButton = _infoButton;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
     //configure sounds
     [self configureMusicAndSound];
-
+    
+   
     
     //begin with values
     time = 0;
@@ -45,6 +47,11 @@
     
     //bring the gameView in front
     [self.view addSubview:gameView];
+    
+    //add info image
+    infoView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"info.png"]];
+    [gameView addSubview:infoView];
+    infoView.hidden = YES;
 
     
     [self.view setNeedsDisplay];
@@ -56,7 +63,7 @@
     [self.gameView addGestureRecognizer:tapRecognizer];
     
     // initialize the cells array
-    game::init(game_array);
+    game::initWithPattern(game_array, 1);
     
     for(int i = 0;i<game::WORLD_SIZE;++i){
         for(int j=0;j<game::WORLD_SIZE;++j){
@@ -111,6 +118,17 @@
 
     }
 }
+/* INFO
+ get info
+ */
+
+-(IBAction)info:(id)sender{
+    if ([infoView isHidden])
+        [infoView setHidden:NO];
+    else
+        [infoView setHidden:YES];
+}
+
 /* RESET
  Activated by double touch
  */

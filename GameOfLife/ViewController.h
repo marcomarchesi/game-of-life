@@ -17,10 +17,14 @@
     int game_state;
     NSTimer *game_timer;
     UITapGestureRecognizer *tapRecognizer;
+    
+    UIImageView *infoView;
 }
 
 @property IBOutlet GameView *gameView;
 @property IBOutlet UIButton *startButton;
+@property IBOutlet UIButton *infoButton;
 -(IBAction)start:(id)sender;
+-(IBAction)info:(id)sender;
 @end
 
