@@ -23,6 +23,7 @@
 @synthesize gameView;
 @synthesize startButton = _startButton;
 @synthesize infoButton = _infoButton;
+@synthesize patternsButton = _patternsButton;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,6 +34,7 @@
    
     
     //begin with values
+    pattern = 0;
     time = 0;
     game_state = 0; //game stop
     gameView.cell_size = gameView.frame.size.width/ game::WORLD_SIZE;
@@ -52,7 +54,22 @@
     infoView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"info.png"]];
     [gameView addSubview:infoView];
     infoView.hidden = YES;
-
+    
+    //add patterns buttons
+    patternsView = [[UIView alloc]initWithFrame:CGRectMake(0, 154,self.view.frame.size.width, 200)];
+    patternsView.backgroundColor = [UIColor blackColor];
+    [gameView addSubview:patternsView];
+    patternsView.hidden = YES;
+    
+    UIButton *pattern_one_button = [[UIButton alloc]initWithFrame:CGRectMake(20, 20, 128, 128)];
+    [pattern_one_button setImage:[UIImage imageNamed:@"pattern-spaceship-button.png"] forState:UIControlStateNormal];
+    [pattern_one_button addTarget:self action:@selector(selectSpaceShip) forControlEvents:UIControlEventTouchUpInside];
+    [patternsView addSubview:pattern_one_button];
+    
+    UIButton *pattern_two_button = [[UIButton alloc]initWithFrame:CGRectMake(200, 20, 128, 128)];
+    [pattern_two_button setImage:[UIImage imageNamed:@"pattern-glider-button.png"] forState:UIControlStateNormal];
+    [pattern_two_button addTarget:self action:@selector(selectGlider) forControlEvents:UIControlEventTouchUpInside];
+    [patternsView addSubview:pattern_two_button];
     
     [self.view setNeedsDisplay];
     
@@ -128,6 +145,44 @@
     else
         [infoView setHidden:YES];
 }
+/* PATTERNS
+ show patterns
+ */
+-(IBAction)patterns:(id)sender{
+    
+    NSLog(@"patterns");
+    if([patternsView isHidden])
+        [patternsView setHidden:NO];
+    else
+        [patternsView setHidden:YES];
+    
+}
+-(void)selectSpaceShip{
+    [self resetWithPattern:1];
+}
+-(void)selectGlider{
+    [self resetWithPattern:2];
+}
+
+-(void)resetWithPattern:(int)selected_pattern{
+    
+    [game_timer invalidate];
+    time = 0;
+    game_state = 0;
+    
+    // initialize the cells array
+    game::initWithPattern(game_array,selected_pattern);
+    
+    for(int i = 0;i<game::WORLD_SIZE;++i){
+        for(int j=0;j<game::WORLD_SIZE;++j){
+            [gameView update:i with:j andValue:game_array[i][j]];
+        }
+    }
+    
+    [patternsView setHidden:YES];
+    [self.view setNeedsDisplay];
+}
+
 
 /* RESET
  Activated by double touch

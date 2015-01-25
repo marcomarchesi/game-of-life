@@ -2,8 +2,14 @@
 
 A Roger Conway's Game of Life for iOS v1.
 
+Patterns:
+ - glider
+ - spaceship
+
 TODO
 ---------------
-- Design v2
+
 - some other sounds
-- Experimental stuff
+- add new patterns
+- design v2
+- experimental stuff

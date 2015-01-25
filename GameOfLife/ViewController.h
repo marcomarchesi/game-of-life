@@ -19,12 +19,17 @@
     UITapGestureRecognizer *tapRecognizer;
     
     UIImageView *infoView;
+    UIView *patternsView;
+    int pattern;
 }
 
 @property IBOutlet GameView *gameView;
 @property IBOutlet UIButton *startButton;
 @property IBOutlet UIButton *infoButton;
+@property IBOutlet UIButton *patternsButton;
 -(IBAction)start:(id)sender;
 -(IBAction)info:(id)sender;
+-(IBAction)patterns:(id)sender;
+-(void)resetWithPattern:(int)pattern;
 @end
 

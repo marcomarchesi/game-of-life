@@ -26,12 +26,36 @@ namespace game{
                 array[i][j] = DEAD;
             }
         }
-        if(pattern == 1){
-            array[30][30] = ALIVE;
-            array[31][30] = ALIVE;
-            array[29][31] = ALIVE;
-            array[30][31] = ALIVE;
-            array[31][32] = ALIVE;
+        
+        switch (pattern) {
+            case 1:
+            {
+                array[8][20] = ALIVE;
+                array[9][20] = ALIVE;
+                array[6][21] = ALIVE;
+                array[7][21] = ALIVE;
+                array[9][21] = ALIVE;
+                array[10][21] = ALIVE;
+                array[6][22] = ALIVE;
+                array[7][22] = ALIVE;
+                array[8][22] = ALIVE;
+                array[9][22] = ALIVE;
+                array[7][23] = ALIVE;
+                array[8][23] = ALIVE;
+                
+            }
+                break;
+            case 2:
+            {
+                array[30][30] = ALIVE;
+                array[31][30] = ALIVE;
+                array[29][31] = ALIVE;
+                array[30][31] = ALIVE;
+                array[31][32] = ALIVE;
+            }
+                break;
+            default:
+                break;
         }
     }
     

@@ -48,6 +48,15 @@
                                     <action selector="info:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dj7-wI-1GL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGM-73-0pa">
+                                <rect key="frame" x="236" y="972" width="77" height="32"/>
+                                <state key="normal" image="patterns_button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="patterns:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nw-rL-Yno"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -56,6 +65,7 @@
                     <connections>
                         <outlet property="gameView" destination="tAy-G8-XrJ" id="bM5-Yu-ibw"/>
                         <outlet property="infoButton" destination="efw-8V-Gms" id="as6-kh-viz"/>
+                        <outlet property="patternsButton" destination="hGM-73-0pa" id="OU9-lF-1x1"/>
                         <outlet property="startButton" destination="jTv-AQ-4LV" id="b9g-pZ-3pw"/>
                     </connections>
                 </viewController>
@@ -65,7 +75,8 @@
     </scenes>
     <resources>
         <image name="app-title" width="2560" height="256"/>
-        <image name="info_button" width="64" height="32"/>
+        <image name="info_button" width="256" height="128"/>
+        <image name="patterns_button" width="310" height="128"/>
         <image name="start-button" width="256" height="256"/>
     </resources>
 </document>
