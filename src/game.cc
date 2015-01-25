@@ -18,10 +18,11 @@ namespace game{
             }
         }
 // uncomment for default cells
-        array[3][39] = ALIVE;
-        array[4][39] = ALIVE;
-        array[5][39] = ALIVE;
-        array[4][38] = ALIVE;
+        array[30][30] = ALIVE;
+        array[31][30] = ALIVE;
+        array[29][31] = ALIVE;
+        array[30][31] = ALIVE;
+        array[31][32] = ALIVE;
     }
     
     //check cell's neighbors

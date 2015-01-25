@@ -1,10 +1,9 @@
 # game-of-life
 
-A Roger Conway's Game of Life for iOS.
+A Roger Conway's Game of Life for iOS v1.
 
 TODO
 ---------------
-- Fix bugs
 - Design v2
-- Add Music
-- Unit Tests
+- some other sounds
+- Experimental stuff

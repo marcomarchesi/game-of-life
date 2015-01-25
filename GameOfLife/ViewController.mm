@@ -13,6 +13,7 @@
 
 @interface ViewController ()<AVAudioPlayerDelegate>
 
+@property (strong,nonatomic) AVAudioPlayer *backgroundMusicPlayer;
 @property (strong, nonatomic) AVAudioPlayer *cellSoundPlayer;
 @property (strong, nonatomic) AVAudioPlayer *resetSoundPlayer;
 
@@ -26,7 +27,7 @@
     
     
     //configure sounds
-    [self configureSound];
+    [self configureMusicAndSound];
 
     
     //begin with values
@@ -65,7 +66,7 @@
     
 }
 
--(void)configureSound{
+-(void)configureMusicAndSound{
     // Create audio player for cell sound
     NSString *cellSoundPath = [[NSBundle mainBundle] pathForResource:@"cell" ofType:@"caf"];
     NSURL *cellSoundURL = [NSURL fileURLWithPath:cellSoundPath];

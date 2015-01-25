@@ -21,6 +21,7 @@
 		42C97D331A75432300B3C9D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C97D321A75432300B3C9D7 /* AVFoundation.framework */; };
 		42C97D371A75467400B3C9D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C97D361A75467400B3C9D7 /* AudioToolbox.framework */; };
 		42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D3E1A755A1800B3C9D7 /* reset.caf */; };
+		42C97D411A75752500B3C9D7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D401A75752500B3C9D7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		42C97D361A75467400B3C9D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		42C97D3D1A75532200B3C9D7 /* cell.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cell.caf; sourceTree = "<group>"; };
 		42C97D3E1A755A1800B3C9D7 /* reset.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reset.caf; sourceTree = "<group>"; };
+		42C97D401A75752500B3C9D7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		42118D671A72B11B008DA23C = {
 			isa = PBXGroup;
 			children = (
+				42C97D401A75752500B3C9D7 /* README.md */,
 				42118DA01A72B256008DA23C /* frameworks */,
 				42118D9C1A72B14E008DA23C /* src */,
 				42118D721A72B11B008DA23C /* GameOfLife */,
@@ -279,6 +282,7 @@
 				42118D7C1A72B11B008DA23C /* ViewController.mm in Sources */,
 				42118DA51A72B2CB008DA23C /* GameView.mm in Sources */,
 				42C97D221A73AD7600B3C9D7 /* game.cc in Sources */,
+				42C97D411A75752500B3C9D7 /* README.md in Sources */,
 				42118D791A72B11B008DA23C /* AppDelegate.m in Sources */,
 				42118D761A72B11B008DA23C /* main.m in Sources */,
 				42C97D261A73BE1400B3C9D7 /* BGView.mm in Sources */,
