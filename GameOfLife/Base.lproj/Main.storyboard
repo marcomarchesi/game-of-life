@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAy-G8-XrJ" customClass="GameView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app-title" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-g5-Xr0">
                                 <rect key="frame" x="64" y="883" width="640" height="64"/>
                             </imageView>
@@ -29,10 +33,6 @@
                                     <action selector="start:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0U6-oh-r0E"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAy-G8-XrJ" customClass="GameView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efw-8V-Gms">
                                 <rect key="frame" x="155" y="972" width="64" height="32"/>
                                 <state key="normal" image="info_button">

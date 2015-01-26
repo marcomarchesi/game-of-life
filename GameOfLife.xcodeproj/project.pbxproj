@@ -22,8 +22,8 @@
 		42C97D371A75467400B3C9D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C97D361A75467400B3C9D7 /* AudioToolbox.framework */; };
 		42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D3E1A755A1800B3C9D7 /* reset.caf */; };
 		42C97D411A75752500B3C9D7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D401A75752500B3C9D7 /* README.md */; };
-		42C97D451A757F2E00B3C9D7 /* gameoflife.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D441A757F2E00B3C9D7 /* gameoflife.caf */; };
 		42C97D461A763D4E00B3C9D7 /* cell.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D3D1A75532200B3C9D7 /* cell.caf */; };
+		42C97D501A76C23800B3C9D7 /* gameoflife.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D4F1A76C23800B3C9D7 /* gameoflife.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		42C97D3D1A75532200B3C9D7 /* cell.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cell.caf; sourceTree = "<group>"; };
 		42C97D3E1A755A1800B3C9D7 /* reset.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reset.caf; sourceTree = "<group>"; };
 		42C97D401A75752500B3C9D7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		42C97D441A757F2E00B3C9D7 /* gameoflife.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameoflife.caf; sourceTree = "<group>"; };
+		42C97D4F1A76C23800B3C9D7 /* gameoflife.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameoflife.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 		42C97D391A7546AA00B3C9D7 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
-				42C97D441A757F2E00B3C9D7 /* gameoflife.caf */,
+				42C97D4F1A76C23800B3C9D7 /* gameoflife.caf */,
 				42C97D3E1A755A1800B3C9D7 /* reset.caf */,
 				42C97D3D1A75532200B3C9D7 /* cell.caf */,
 			);
@@ -265,9 +265,9 @@
 				42C97D461A763D4E00B3C9D7 /* cell.caf in Resources */,
 				42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */,
 				42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */,
+				42C97D501A76C23800B3C9D7 /* gameoflife.caf in Resources */,
 				42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */,
 				42118D811A72B11B008DA23C /* Images.xcassets in Resources */,
-				42C97D451A757F2E00B3C9D7 /* gameoflife.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,12 +69,10 @@
     [pattern_one_button setImage:[UIImage imageNamed:@"pattern-spaceship-button.png"] forState:UIControlStateNormal];
     [pattern_one_button addTarget:self action:@selector(selectSpaceShip) forControlEvents:UIControlEventTouchUpInside];
     [patternsView addSubview:pattern_one_button];
-    
     UIButton *pattern_two_button = [[UIButton alloc]initWithFrame:CGRectMake(250, 20, 256, 256)];
     [pattern_two_button setImage:[UIImage imageNamed:@"pattern-glider-button.png"] forState:UIControlStateNormal];
     [pattern_two_button addTarget:self action:@selector(selectGlider) forControlEvents:UIControlEventTouchUpInside];
     [patternsView addSubview:pattern_two_button];
-    
     UIButton *pattern_three_button = [[UIButton alloc]initWithFrame:CGRectMake(500, 20, 256, 256)];
     [pattern_three_button setImage:[UIImage imageNamed:@"pattern-glidergun-button.png"] forState:UIControlStateNormal];
     [pattern_three_button addTarget:self action:@selector(selectGliderGun) forControlEvents:UIControlEventTouchUpInside];
@@ -115,12 +113,14 @@
     NSURL *cellSoundURL = [NSURL fileURLWithPath:cellSoundPath];
     self.cellSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:cellSoundURL error:nil];
     self.cellSoundPlayer.delegate = self;
+    self.cellSoundPlayer.volume = 0.5;
     self.cellSoundPlayer.numberOfLoops = 0;	//no loops
     // Create audio player for cell sound
     NSString *resetSoundPath = [[NSBundle mainBundle] pathForResource:@"reset" ofType:@"caf"];
     NSURL *resetSoundURL = [NSURL fileURLWithPath:resetSoundPath];
     self.resetSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:resetSoundURL error:nil];
     self.resetSoundPlayer.delegate = self;
+    self.resetSoundPlayer.volume = 0.5;
     self.resetSoundPlayer.numberOfLoops = 0;	//no loops
 }
 
@@ -129,6 +129,11 @@
  button enabled
  */
 -(IBAction)start:(id)sender{
+    
+    if(![patternsView isHidden])
+        [patternsView setHidden:YES];
+    if(![infoView isHidden])
+        [infoView setHidden:YES];
     
     if(game_state == 0){    //start the game
         game_state = 1;
@@ -289,13 +294,16 @@
             game_array[i_value][j_value] = game::DEAD;
         }
         
+        
+        if(game_state == 1){    //stop the game if you add cells
+            game_state = 0;
+            [game_timer invalidate];
+        }
+        
         [gameView update:i_value with:j_value andValue:game_array[i_value][j_value]];
         [self.view setNeedsDisplay];
     }
-    if(game_state == 1){    //stop the game if you add cells
-        game_state = 0;
-        [game_timer invalidate];
-    }
+    
 
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
