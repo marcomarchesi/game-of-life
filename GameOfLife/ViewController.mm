@@ -140,6 +140,10 @@
  */
 
 -(IBAction)info:(id)sender{
+    
+    if(![patternsView isHidden])
+        [patternsView setHidden:YES];
+    
     if ([infoView isHidden])
         [infoView setHidden:NO];
     else
@@ -150,7 +154,9 @@
  */
 -(IBAction)patterns:(id)sender{
     
-    NSLog(@"patterns");
+    if(![infoView isHidden])
+        [infoView setHidden:YES];
+    
     if([patternsView isHidden])
         [patternsView setHidden:NO];
     else

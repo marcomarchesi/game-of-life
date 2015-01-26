@@ -1,6 +1,6 @@
 # Game Of Life
 
-A Roger Conway's Game of Life for iOS v1.
+A John Conway's Game of Life for iOS v1.
 
 Patterns:
  - glider
