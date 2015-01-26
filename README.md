@@ -1,10 +1,11 @@
-# Game Of Life
+# Game Of Life v1
 
-A John Conway's Game of Life for iOS v1.
+A John Conway's Game of Life for iOS.
 
-Patterns:
+Feaured Patterns:
  - glider
  - spaceship
+ - gopher glider gun (infinite pattern)
 
 TODO
 ---------------
