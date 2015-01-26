@@ -11,6 +11,9 @@
 
 @implementation GameView
 @synthesize cell_size = _cell_size;
+@synthesize r = _r;
+@synthesize g = _g;
+@synthesize b = _b;
 
 -(void)update:(int)i_value with:(int)j_value andValue:(int)cell_value{
     
@@ -24,7 +27,7 @@
     for(int i = 0;i<game::WORLD_SIZE;++i){
         for(int j=0;j<game::WORLD_SIZE;++j){
             
-            CGContextSetRGBFillColor (myContext, 0,1,1, game_array[i][j]);
+            CGContextSetRGBFillColor (myContext, _r,_g,_b, game_array[i][j]);
             CGContextFillRect (myContext, CGRectMake (i*_cell_size, j*_cell_size, _cell_size-1, _cell_size-1));
         }
     };

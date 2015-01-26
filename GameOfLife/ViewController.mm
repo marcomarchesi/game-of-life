@@ -36,8 +36,12 @@
     //begin with values
     pattern = 0;
     time = 0;
+    color = 0;
     game_state = 0; //game stop
     gameView.cell_size = gameView.frame.size.width/ game::WORLD_SIZE;
+    gameView.r = 0;
+    gameView.g = 1;
+    gameView.b = 1;
     
     
     // add a dark cells background
@@ -136,8 +140,6 @@
     }else{  //stop the game
         game_state = 0;
         [game_timer invalidate];
-        
-
     }
 }
 /* INFO
@@ -168,6 +170,38 @@
         [patternsView setHidden:YES];
     
 }
+-(IBAction)options:(id)sender{
+    
+    switch (color) {
+        case 0:
+        {
+            [self selectYellow];
+            color = 1;
+        }
+            break;
+        case 1:
+        {
+            [self selectGreen];
+            color = 2;
+        }
+            break;
+        case 2:
+        {
+            [self selectCyan];
+            color = 0;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    if(![patternsView isHidden])
+        [patternsView setHidden:YES];
+    if(![infoView isHidden])
+        [infoView setHidden:YES];
+}
+
+
 -(void)selectSpaceShip{
     [self resetWithPattern:1];
 }
@@ -176,6 +210,28 @@
 }
 -(void)selectGliderGun{
     [self resetWithPattern:3];
+}
+
+-(void)selectCyan{
+    gameView.r = 0;
+    gameView.g = 1;
+    gameView.b = 1;
+    [_startButton setImage:[UIImage imageNamed:@"startButtonCyan.png"] forState:UIControlStateNormal];
+    [gameView setNeedsDisplay];
+}
+-(void)selectYellow{
+    gameView.r = 1;
+    gameView.g = 1;
+    gameView.b = 0;
+    [_startButton setImage:[UIImage imageNamed:@"startButtonYellow.png"] forState:UIControlStateNormal];
+    [gameView setNeedsDisplay];
+}
+-(void)selectGreen{
+    gameView.r = 0;
+    gameView.g = 1;
+    gameView.b = 0;
+    [_startButton setImage:[UIImage imageNamed:@"startButtonGreen.png"] forState:UIControlStateNormal];
+    [gameView setNeedsDisplay];
 }
 
 -(void)resetWithPattern:(int)selected_pattern{

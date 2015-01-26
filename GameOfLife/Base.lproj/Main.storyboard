@@ -22,7 +22,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTv-AQ-4LV">
                                 <rect key="frame" x="345" y="883" width="64" height="64"/>
-                                <state key="normal" image="start-button">
+                                <state key="normal" image="startButtonCyan">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -38,6 +38,9 @@
                                 <state key="normal" image="info_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="414" y="972" width="64" height="32"/>
+                                </variation>
                                 <connections>
                                     <action selector="info:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dj7-wI-1GL"/>
                                 </connections>
@@ -47,18 +50,44 @@
                                 <state key="normal" image="patterns_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="495" y="972" width="77" height="32"/>
+                                </variation>
                                 <connections>
                                     <action selector="patterns:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7nw-rL-Yno"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2l-0X-Kro">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="colors-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="591" y="972" width="77" height="32"/>
+                                </variation>
+                                <connections>
+                                    <action selector="options:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6D2-dz-ZOV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Y2l-0X-Kro"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="Y2l-0X-Kro"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="gameView" destination="tAy-G8-XrJ" id="bM5-Yu-ibw"/>
                         <outlet property="infoButton" destination="efw-8V-Gms" id="as6-kh-viz"/>
+                        <outlet property="optionsButton" destination="Y2l-0X-Kro" id="A4a-C0-8J7"/>
                         <outlet property="patternsButton" destination="hGM-73-0pa" id="OU9-lF-1x1"/>
                         <outlet property="startButton" destination="jTv-AQ-4LV" id="b9g-pZ-3pw"/>
                     </connections>
@@ -69,8 +98,9 @@
     </scenes>
     <resources>
         <image name="app-title" width="2560" height="256"/>
+        <image name="colors-button" width="256" height="128"/>
         <image name="info_button" width="256" height="128"/>
         <image name="patterns_button" width="310" height="128"/>
-        <image name="start-button" width="256" height="256"/>
+        <image name="startButtonCyan" width="256" height="256"/>
     </resources>
 </document>

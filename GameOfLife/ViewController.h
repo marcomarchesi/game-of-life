@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "game.h"
 @class GameView;
+@class OptionsView;
 @interface ViewController : UIViewController<UIGestureRecognizerDelegate>{
     
     int game_array[game::WORLD_SIZE][game::WORLD_SIZE];
@@ -21,15 +22,18 @@
     UIImageView *infoView;
     UIView *patternsView;
     int pattern;
+    int color;
 }
 
 @property IBOutlet GameView *gameView;
 @property IBOutlet UIButton *startButton;
 @property IBOutlet UIButton *infoButton;
 @property IBOutlet UIButton *patternsButton;
+@property IBOutlet UIButton *optionsButton;
 -(IBAction)start:(id)sender;
 -(IBAction)info:(id)sender;
 -(IBAction)patterns:(id)sender;
+-(IBAction)options:(id)sender;
 -(void)resetWithPattern:(int)pattern;
 @end
 
