@@ -56,20 +56,25 @@
     infoView.hidden = YES;
     
     //add patterns buttons
-    patternsView = [[UIView alloc]initWithFrame:CGRectMake(0, 154,self.view.frame.size.width, 200)];
+    patternsView = [[UIView alloc]initWithFrame:CGRectMake(0, 154,self.view.frame.size.width, 300)];
     patternsView.backgroundColor = [UIColor blackColor];
     [gameView addSubview:patternsView];
     patternsView.hidden = YES;
     
-    UIButton *pattern_one_button = [[UIButton alloc]initWithFrame:CGRectMake(20, 20, 128, 128)];
+    UIButton *pattern_one_button = [[UIButton alloc]initWithFrame:CGRectMake(20, 20, 256, 256)];
     [pattern_one_button setImage:[UIImage imageNamed:@"pattern-spaceship-button.png"] forState:UIControlStateNormal];
     [pattern_one_button addTarget:self action:@selector(selectSpaceShip) forControlEvents:UIControlEventTouchUpInside];
     [patternsView addSubview:pattern_one_button];
     
-    UIButton *pattern_two_button = [[UIButton alloc]initWithFrame:CGRectMake(200, 20, 128, 128)];
+    UIButton *pattern_two_button = [[UIButton alloc]initWithFrame:CGRectMake(250, 20, 256, 256)];
     [pattern_two_button setImage:[UIImage imageNamed:@"pattern-glider-button.png"] forState:UIControlStateNormal];
     [pattern_two_button addTarget:self action:@selector(selectGlider) forControlEvents:UIControlEventTouchUpInside];
     [patternsView addSubview:pattern_two_button];
+    
+    UIButton *pattern_three_button = [[UIButton alloc]initWithFrame:CGRectMake(500, 20, 256, 256)];
+    [pattern_three_button setImage:[UIImage imageNamed:@"pattern-glidergun-button.png"] forState:UIControlStateNormal];
+    [pattern_three_button addTarget:self action:@selector(selectGliderGun) forControlEvents:UIControlEventTouchUpInside];
+    [patternsView addSubview:pattern_three_button];
     
     [self.view setNeedsDisplay];
     
@@ -168,6 +173,9 @@
 }
 -(void)selectGlider{
     [self resetWithPattern:2];
+}
+-(void)selectGliderGun{
+    [self resetWithPattern:3];
 }
 
 -(void)resetWithPattern:(int)selected_pattern{

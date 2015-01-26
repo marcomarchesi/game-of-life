@@ -23,6 +23,7 @@
 		42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D3E1A755A1800B3C9D7 /* reset.caf */; };
 		42C97D411A75752500B3C9D7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 42C97D401A75752500B3C9D7 /* README.md */; };
 		42C97D451A757F2E00B3C9D7 /* gameoflife.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D441A757F2E00B3C9D7 /* gameoflife.caf */; };
+		42C97D461A763D4E00B3C9D7 /* cell.caf in Resources */ = {isa = PBXBuildFile; fileRef = 42C97D3D1A75532200B3C9D7 /* cell.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C97D461A763D4E00B3C9D7 /* cell.caf in Resources */,
 				42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */,
 				42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */,
 				42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */,
