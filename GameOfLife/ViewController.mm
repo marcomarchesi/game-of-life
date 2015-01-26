@@ -120,7 +120,7 @@
     NSURL *resetSoundURL = [NSURL fileURLWithPath:resetSoundPath];
     self.resetSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:resetSoundURL error:nil];
     self.resetSoundPlayer.delegate = self;
-    self.resetSoundPlayer.volume = 0.5;
+    self.resetSoundPlayer.volume = 0.3;
     self.resetSoundPlayer.numberOfLoops = 0;	//no loops
 }
 

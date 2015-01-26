@@ -11,6 +11,7 @@
 
 @implementation BGView
 @synthesize cell_size = _cell_size;
+
 - (void)drawRect:(CGRect)rect {
     CGContextRef myContext = UIGraphicsGetCurrentContext();
     
