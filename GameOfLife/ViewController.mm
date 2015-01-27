@@ -296,7 +296,14 @@
     int i_value = (touchLocation.x / gameView.cell_size);
     int j_value = (touchLocation.y / gameView.cell_size);
     
-    if(j_value >-1 && j_value<game::WORLD_SIZE){    //otherwise it's out of range
+    if(i_value == 40)
+        i_value = 39;
+    if(j_value == 40)
+        j_value = 39;
+    
+    NSLog(@"i is %i and j is %i",i_value,j_value);
+    
+    if(i_value>-1 && i_value<game::WORLD_SIZE && j_value >-1 && j_value<game::WORLD_SIZE){    //otherwise it's out of range
         
         if(game_array[i_value][j_value] == game::DEAD){
             game_array[i_value][j_value] = game::ALIVE;
@@ -325,7 +332,7 @@
     int i_value = (touchLocation.x / gameView.cell_size);
     int j_value = (touchLocation.y / gameView.cell_size);
     
-    if(j_value >-1 && j_value<game::WORLD_SIZE){    //otherwise it's out of range
+    if(i_value>-1 && i_value<game::WORLD_SIZE && j_value >-1 && j_value<game::WORLD_SIZE){    //otherwise it's out of range
         
         if(game_array[i_value][j_value] == game::DEAD){
             game_array[i_value][j_value] = game::ALIVE;
