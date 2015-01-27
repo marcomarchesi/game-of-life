@@ -30,18 +30,18 @@ namespace game{
         switch (pattern) {
             case 1: //spaceship
             {
-                array[8][20] = ALIVE;
-                array[9][20] = ALIVE;
-                array[6][21] = ALIVE;
-                array[7][21] = ALIVE;
-                array[9][21] = ALIVE;
-                array[10][21] = ALIVE;
-                array[6][22] = ALIVE;
-                array[7][22] = ALIVE;
-                array[8][22] = ALIVE;
-                array[9][22] = ALIVE;
-                array[7][23] = ALIVE;
-                array[8][23] = ALIVE;
+                array[8][25] = ALIVE;
+                array[9][25] = ALIVE;
+                array[6][26] = ALIVE;
+                array[7][26] = ALIVE;
+                array[9][26] = ALIVE;
+                array[10][26] = ALIVE;
+                array[6][27] = ALIVE;
+                array[7][27] = ALIVE;
+                array[8][27] = ALIVE;
+                array[9][27] = ALIVE;
+                array[7][28] = ALIVE;
+                array[8][28] = ALIVE;
                 
             }
                 break;
