@@ -147,6 +147,14 @@
         [game_timer invalidate];
     }
 }
+-(void)restart{
+    game_state = 1;
+    game_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                  target:self
+                                                selector:@selector(run)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
 /* INFO
  get info
  */
@@ -298,6 +306,7 @@
         if(game_state == 1){    //stop the game if you add cells
             game_state = 0;
             [game_timer invalidate];
+            [self performSelector:@selector(restart) withObject:nil afterDelay:2.0];
         }
         
         [gameView update:i_value with:j_value andValue:game_array[i_value][j_value]];
