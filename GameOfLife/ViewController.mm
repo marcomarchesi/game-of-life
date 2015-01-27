@@ -104,7 +104,7 @@
     NSURL *backgroundMusicURL = [NSURL fileURLWithPath:backgroundMusicPath];
     self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:nil];
     self.backgroundMusicPlayer.delegate = self;
-    self.backgroundMusicPlayer.volume = 0.3;
+    self.backgroundMusicPlayer.volume = 0.1;
     self.backgroundMusicPlayer.numberOfLoops = -1;	//no loops
     [self.backgroundMusicPlayer play];
     
@@ -120,7 +120,7 @@
     NSURL *resetSoundURL = [NSURL fileURLWithPath:resetSoundPath];
     self.resetSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:resetSoundURL error:nil];
     self.resetSoundPlayer.delegate = self;
-    self.resetSoundPlayer.volume = 0.3;
+    self.resetSoundPlayer.volume = 0.1;
     self.resetSoundPlayer.numberOfLoops = 0;	//no loops
 }
 
@@ -148,12 +148,15 @@
     }
 }
 -(void)restart{
-    game_state = 1;
-    game_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
-                                                  target:self
-                                                selector:@selector(run)
-                                                userInfo:nil
-                                                 repeats:YES];
+    if(game_state == 0){
+        game_state = 1;
+        game_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                      target:self
+                                                    selector:@selector(run)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    }
+    
 }
 /* INFO
  get info
