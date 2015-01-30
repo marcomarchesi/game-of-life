@@ -12,7 +12,6 @@
 		42118D7C1A72B11B008DA23C /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118D7B1A72B11B008DA23C /* ViewController.mm */; };
 		42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42118D7D1A72B11B008DA23C /* Main.storyboard */; };
 		42118D811A72B11B008DA23C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42118D801A72B11B008DA23C /* Images.xcassets */; };
-		42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42118D821A72B11B008DA23C /* LaunchScreen.xib */; };
 		42118D901A72B11B008DA23C /* GameOfLifeTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118D8F1A72B11B008DA23C /* GameOfLifeTests.mm */; };
 		42118DA21A72B268008DA23C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42118DA11A72B268008DA23C /* QuartzCore.framework */; };
 		42118DA51A72B2CB008DA23C /* GameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42118DA41A72B2CB008DA23C /* GameView.mm */; };
@@ -46,7 +45,6 @@
 		42118D7B1A72B11B008DA23C /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		42118D7E1A72B11B008DA23C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42118D801A72B11B008DA23C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		42118D831A72B11B008DA23C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42118D891A72B11B008DA23C /* GameOfLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42118D8E1A72B11B008DA23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42118D8F1A72B11B008DA23C /* GameOfLifeTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameOfLifeTests.mm; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				42118D7B1A72B11B008DA23C /* ViewController.mm */,
 				42118D7D1A72B11B008DA23C /* Main.storyboard */,
 				42118D801A72B11B008DA23C /* Images.xcassets */,
-				42118D821A72B11B008DA23C /* LaunchScreen.xib */,
 				42118D731A72B11B008DA23C /* Supporting Files */,
 				42118DA31A72B2CB008DA23C /* GameView.h */,
 				42118DA41A72B2CB008DA23C /* GameView.mm */,
@@ -267,7 +264,6 @@
 				42C97D3F1A755B2100B3C9D7 /* reset.caf in Resources */,
 				42118D7F1A72B11B008DA23C /* Main.storyboard in Resources */,
 				42C97D501A76C23800B3C9D7 /* gameoflife.caf in Resources */,
-				42118D841A72B11B008DA23C /* LaunchScreen.xib in Resources */,
 				42118D811A72B11B008DA23C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,14 +333,6 @@
 				42118D7E1A72B11B008DA23C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		42118D821A72B11B008DA23C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42118D831A72B11B008DA23C /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
