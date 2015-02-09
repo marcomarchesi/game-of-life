@@ -16,6 +16,7 @@
     int next_array[game::WORLD_SIZE][game::WORLD_SIZE];
     int time;
     int game_state;
+    int game_color;
     NSTimer *game_timer;
     UITapGestureRecognizer *tapRecognizer;
     

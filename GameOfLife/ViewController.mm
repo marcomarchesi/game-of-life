@@ -42,6 +42,8 @@
     gameView.r = 0;
     gameView.g = 1;
     gameView.b = 1;
+    //set the default color to cyan
+    game_color = game::GAME_CYAN;
     
     
     // add a dark cells background
@@ -137,6 +139,7 @@
     
     if(game_state == 0){    //start the game
         game_state = 1;
+        [self checkColor];
         game_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                          target:self
                                        selector:@selector(run)
@@ -144,12 +147,14 @@
                                         repeats:YES];
     }else{  //stop the game
         game_state = 0;
+        [self checkColor];
         [game_timer invalidate];
     }
 }
 -(void)restart{
     if(game_state == 0){
         game_state = 1;
+        [self checkColor];
         game_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                       target:self
                                                     selector:@selector(run)
@@ -184,6 +189,9 @@
         [patternsView setHidden:NO];
     else
         [patternsView setHidden:YES];
+    
+    game_state = 0;
+    [self checkColor];
     
 }
 -(IBAction)options:(id)sender{
@@ -232,21 +240,24 @@
     gameView.r = 0;
     gameView.g = 1;
     gameView.b = 1;
-    [_startButton setImage:[UIImage imageNamed:@"startButtonCyan.png"] forState:UIControlStateNormal];
+    game_color = game::GAME_CYAN;
+    [self checkColor];
     [gameView setNeedsDisplay];
 }
 -(void)selectYellow{
     gameView.r = 1;
     gameView.g = 1;
     gameView.b = 0;
-    [_startButton setImage:[UIImage imageNamed:@"startButtonYellow.png"] forState:UIControlStateNormal];
+    game_color = game::GAME_YELLOW;
+    [self checkColor];
     [gameView setNeedsDisplay];
 }
 -(void)selectGreen{
     gameView.r = 0;
     gameView.g = 1;
     gameView.b = 0;
-    [_startButton setImage:[UIImage imageNamed:@"startButtonGreen.png"] forState:UIControlStateNormal];
+    game_color = game::GAME_GREEN;
+    [self checkColor];
     [gameView setNeedsDisplay];
 }
 
@@ -255,6 +266,7 @@
     [game_timer invalidate];
     time = 0;
     game_state = 0;
+    [self checkColor];
     
     // initialize the cells array
     game::initWithPattern(game_array,selected_pattern);
@@ -278,6 +290,7 @@
     [game_timer invalidate];
     time = 0;
     game_state = 0;
+    [self checkColor];
     game::init(game_array);
     
     //reset all the cells
@@ -315,6 +328,7 @@
         
         if(game_state == 1){    //stop the game if you add cells
             game_state = 0;
+            [self checkColor];
             [game_timer invalidate];
             [self performSelector:@selector(restart) withObject:nil afterDelay:2.0];
         }
@@ -344,6 +358,7 @@
     }
     if(game_state == 1){    //stop the game if you add cells
         game_state = 0;
+        [self checkColor];
         [game_timer invalidate];
     }
 
@@ -368,6 +383,27 @@
         time++;    
 };
 
+/* CHECK COLOR
+ 
+*/
+-(void)checkColor{
+    if(game_state == 0){
+        if(game_color == game::GAME_CYAN)
+            [_startButton setImage:[UIImage imageNamed:@"startButtonCyan.png"] forState:UIControlStateNormal];
+        else if (game_color == game::GAME_YELLOW)
+            [_startButton setImage:[UIImage imageNamed:@"startButtonYellow.png"] forState:UIControlStateNormal];
+        else if (game_color == game::GAME_GREEN)
+            [_startButton setImage:[UIImage imageNamed:@"startButtonGreen.png"] forState:UIControlStateNormal];
+    }else{
+        if(game_color == game::GAME_CYAN)
+            [_startButton setImage:[UIImage imageNamed:@"pauseButtonCyan.png"] forState:UIControlStateNormal];
+        else if (game_color == game::GAME_YELLOW)
+            [_startButton setImage:[UIImage imageNamed:@"pauseButtonYellow.png"] forState:UIControlStateNormal];
+        else if (game_color == game::GAME_GREEN)
+            [_startButton setImage:[UIImage imageNamed:@"pauseButtonGreen.png"] forState:UIControlStateNormal];
+
+    }
+}
 
 
 -(void)playCellSound{

@@ -24,15 +24,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app-title" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-g5-Xr0">
                                 <rect key="frame" x="64" y="883" width="640" height="64"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTv-AQ-4LV">
-                                <rect key="frame" x="345" y="883" width="64" height="64"/>
-                                <state key="normal" image="startButtonCyan">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="start:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0U6-oh-r0E"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efw-8V-Gms">
                                 <rect key="frame" x="155" y="972" width="64" height="32"/>
                                 <state key="normal" image="info_button">
@@ -67,6 +58,18 @@
                                 </variation>
                                 <connections>
                                     <action selector="options:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6D2-dz-ZOV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTv-AQ-4LV">
+                                <rect key="frame" x="345" y="883" width="64" height="64"/>
+                                <state key="normal" image="startButtonCyan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="342" y="883" width="64" height="64"/>
+                                </variation>
+                                <connections>
+                                    <action selector="start:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0U6-oh-r0E"/>
                                 </connections>
                             </button>
                         </subviews>
